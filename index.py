@@ -125,15 +125,16 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts=0
         print(self.login_attempts)
+class Privileges():
+    def __init__(self):
+        self.privileges=[1,2,3]
+    def show_privileges(self):
+        for i in self.privileges:
+            print(i)
+
 class Admin(User):
     def __init__(self, first_name, last_name, floor, age, status, user, login_attempts):
         super().__init__(first_name, last_name, floor, age, status, user, login_attempts)
-        self.privigeles=Priivileges()
-class Priivileges():
-    def __init__(self):
-        self.privileges=['jojo','jojo','jojo']
-    def show_privilegas(self):
-        for i in self.privileges:
-            print(i)
+        self.privileges=Privileges()
 x1=Admin(1,1,1,1,1,1,1)
-x1.privigeles.show_privilegas()
+x1.privileges.show_privileges()
