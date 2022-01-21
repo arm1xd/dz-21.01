@@ -1,3 +1,4 @@
+import random
 # 9.4
 # class Restaurant:
 #    def __init__(self,restaurant_name,cuisine_type,number_served=0):
@@ -127,8 +128,9 @@ class User:
         print(self.login_attempts)
 class Privileges():
     def __init__(self):
-        self.privileges=[1,2,3]
-    def show_privileges(self):
+        pass
+    def show_privileges(self,privileges):
+        self.privileges=privileges
         for i in self.privileges:
             print(i)
 
@@ -137,4 +139,19 @@ class Admin(User):
         super().__init__(first_name, last_name, floor, age, status, user, login_attempts)
         self.privileges=Privileges()
 x1=Admin(1,1,1,1,1,1,1)
-x1.privileges.show_privileges()
+n=int(input('n= '))
+x1.privileges.show_privileges([random.randint(-10,10) for i in range(n+1)])
+
+#class Privileges():
+#    def __init__(self):
+#        self.privileges=[1,2,3]
+#    def show_privileges(self):
+#        for i in self.privileges:
+#            print(i)
+
+#class Admin(User):
+#    def __init__(self, first_name, last_name, floor, age, status, user, login_attempts):
+#        super().__init__(first_name, last_name, floor, age, status, user, login_attempts)
+#        self.privileges=Privileges()
+#x1=Admin(1,1,1,1,1,1,1)
+#x1.privileges.show_privileges()
